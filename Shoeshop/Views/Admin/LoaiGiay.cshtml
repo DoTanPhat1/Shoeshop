@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Shoeshop.Models.LOAIGIAY>
+
+@{
+    ViewBag.Title = "LoaiGiay";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>QUẢN LÝ LOẠI GIÀY</h2>
+
+<p>
+    @Html.ActionLink("THÊM MỚI", "ThemMoiLoaiGiay")
+</p>
+<table class="table">
+    <tr>
+        <th style="width:150px">Tên loại</th>
+        <th style="width:150px"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tenloai)
+            </td>
+            <td>
+                
+                @Html.ActionLink("Xóa", "XoaLoaiGiay", new { id = item.Maloai })
+            </td>
+        </tr>
+    }
+
+</table>

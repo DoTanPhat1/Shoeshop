@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>login</title>
+    <meta charset="UTF-8" />
+    <meta name="Designer" content="PremiumPixels.com">
+    <meta name="Author" content="$hekh@r d-Ziner, CSSJUNTION.com">
+    <link href="~/Content/css/structure.css" rel="stylesheet" />
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+</head>
+<body>
+    <h2 style="text-align:center; padding:100px"> TRANG ADMINSTRATION</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+
+        <div class="box login">
+            <h3>@ViewBag.Thongbao</h3>
+            <fieldset class="boxBody">
+                <label>Username</label>
+                <input type="text" name="username" />
+                @ViewData["Loi1"]
+                <label>Password</label>
+                <input type="password" name="password" />
+                @ViewData["Loi2"]
+            </fieldset>
+            <footer>
+                <label><input type="checkbox" tabindex="3">Keep me logged in</label>
+                <input type="submit" class="btnLogin" value="Login" tabindex="4">
+            </footer>
+        </div>
+    }
+    <footer id="main">
+        <a href="http://wwww.cssjunction.com">Simple Login Form (HTML5/CSS3 Coded) by CSS Junction</a> | <a href="http://www.premiumpixels.com">PSD by Premium Pixels</a>
+    </footer>
+</body>
+</html>

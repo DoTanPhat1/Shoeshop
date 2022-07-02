@@ -1,0 +1,161 @@
+﻿body {
+ 
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.offer {
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgb(252, 70, 107, 1)100%);
+
+    padding: 30px 0;
+   
+}
+
+.col-2 .offer-img {
+    padding: 50px;
+}
+
+.small {
+    color: #fff;
+}
+.testimonial {
+   
+}
+
+    .testimonial .col-3 {
+        text-align: center;
+        padding: 40px 20px;
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1 );
+        cursor: pointer;
+        transition: transform 0.5s;
+        margin-top: 50px;
+    }
+
+        .testimonial .col-3 img {
+            width: 50px;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+
+        .testimonial .col-3:hover {
+            transform: translateY(-10px);
+        }
+
+        .testimonial.col-3 h3 {
+            font-weight: 600;
+            color: #555;
+            font-size: 16px;
+        }
+
+.fa.fa-quote-left {
+    font-size: 34px;
+    margin: 12px 0;
+    color: #ff523b;
+}
+
+.col-3 p {
+    font-size: 12px;
+    margin: 12px 0;
+    color: #777;
+}
+
+.brands {
+    margin: 100px auto;
+}
+
+.co-5 {
+    width: 160px;
+}
+
+.col-5 img {
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+    .col-5 img:hover {
+        filter: grayscale(0);
+    }
+.offer small-container {
+    display: flex;
+    align-items: center;
+}
+
+.offer small-container img{
+   width:450px;
+}
+
+
+.small-container img {
+    width: 170px;
+}
+.small-container .col-5 {
+    display:inline-block;
+}
+
+.list-group a {
+    color: lightpink;
+    font-weight: bold;
+}
+.footer {
+    background: #000;
+}
+
+    .footer h3 {
+        color: #000;
+    }
+
+    .footer p {
+        color: #555;
+    }
+
+.hinhanh {
+    width: 250px !important;
+  
+    text-align:center;
+    text-align:center;
+}
+
+.tk img {
+    width: 100px;
+    height: 80px;
+}
+
+.center {
+    text-align: center;
+}
+
+.copyright {
+    color: #ff523b !important;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+footer .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

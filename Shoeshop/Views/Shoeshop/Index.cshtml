@@ -1,0 +1,156 @@
+﻿@using Shoeshop.Models
+@using PagedList.Mvc;
+
+@model PagedList.PagedList<GIAY>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h3 style="color:red; text-align:center; font-weight:bold"> GIÀY MỚI </h3>
+@using (Html.BeginForm("Index", "Shoeshop", FormMethod.Get, new { @class = "form-inline" }))
+{
+    <div class="form-group form-inline" style="display: flex;">
+        <input type="Text" class="form-control col-md-10" value="@ViewBag.Keyword"
+               name="searchString" placeholder="Nhập tên sản phẩm cần tìm">
+
+        <input type="submit" class="btn btn-info" value="Tìm sản phẩm" style="margin-left: 10px; background-color: #000">
+
+    </div>
+    <br>
+}
+<div class="row">
+    @foreach (var giay in Model)
+    {
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+
+                <a href="@Url.Action("Details", "Shoeshop", new { id = giay.Magiay })">
+                    <img alt="@giay.Tengiay" src="~/product_imgs/@giay.AnhBia" />
+                    <span>@giay.Tengiay</span>
+                </a>
+                <div class="ratings">
+                    <p class="pull-right">15 reviews</p>
+                    <p>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    }
+</div>
+@*Tao trang lien ket*@
+Trang @(Model.PageCount <Model.PageNumber?0:Model.PageNumber)/@Model.PageCount;
+<div>
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+</div>
+
+
+<div class="offer">
+    <small-container>
+        <div class="row">
+            <img src="~/images/banner1.png" class="offer-img">
+        </div>
+        <div class="col-2">
+            <p>
+                Only Available in This Store
+            </p>
+            <h1>Xiaomi Mi Smart Band 4</h1>
+            <small>
+                ANOLED color touch screen with better brightness and 40% more viewable screen.
+                View your calls, messages and not notifications
+                Track physical activity (including swimming).
+                Water resistant up to 50 m.
+                Improvement in the measurement of metrics.
+            </small>
+            <div class="button">
+                <a href="#" class="btn">Buy Now &#10132;</a>
+            </div>
+        </div>
+    </small-container>
+</div>
+
+
+<!-- /.container -->
+<div class="testimonial">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti consequuntur eveninet
+                    beatae aperiam atque? Voluptate quae nihil numquam expedita nisi.
+                </p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+                </div>
+                <img src="~/images/user-1.png">
+                <h3>Tran Truong Vi</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti consequuntur eveninet
+                    beatae aperiam atque? Voluptate quae nihil numquam expedita nisi.
+                </p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+                </div>
+                <img src="~/images/user-2.png">
+                <h3>Dang Thanh Kha</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti consequuntur eveninet
+                    beatae aperiam atque? Voluptate quae nihil numquam expedita nisi.
+                </p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+                </div>
+                <img src="~/images/user-3.png">
+                <h3>Do Tan Phat</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="brands">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="~/images/logoadidas1.png">
+            </div>
+            <div class="col-5">
+                <img src="~/images/logonike1.png">
+            </div>
+            <div class="col-5">
+                <img src="~/images/logobetis.png">
+            </div>
+            <div class="col-5">
+                <img src="~/images/logovans.png">
+            </div>
+            <div class="col-5">
+                <img src="~/images/logopuma.png">
+            </div>
+        </div>
+    </div>
+</div>
