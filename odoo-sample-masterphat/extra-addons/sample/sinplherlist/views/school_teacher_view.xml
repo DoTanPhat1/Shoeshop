@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="school_teacher_view_form" model="ir.ui.view">
+        <field name="name">school.teacher.view.form.in</field>
+        <field name="model">school.teacher</field>
+        <field name="inherit_id" ref="simple_school.school_teacher_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='birthday']" position="after">
+                <field name="huyhieu_ids" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="school_student_view_form" model="ir.ui.view">
+        <field name="name">school.student.view.form.in</field>
+        <field name="model">school.student</field>
+        <field name="inherit_id" ref="simple_school.school_student_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='birthday']" position="after">
+                <field name="class_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="school_class_view_form" model="ir.ui.view">
+        <field name="name">school.class.view.form.in</field>
+        <field name="model">school.class</field>
+        <field name="inherit_id" ref="simple_school.school_class_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="student_ids" />
+                <field name="teacher_id" />
+                <field name="student_count" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="school_teacher_view_form" model="ir.ui.view">
+        <field name="name">school.teacher.view.form</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="birthday"/>
+                        <!-- <field name="class_ids"/> -->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_teacher_view_tree" model="ir.ui.view">
+        <field name="name">school.teacher.view.tree</field>
+        <field name="model">school.teacher</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="birthday"/>
+                <!-- <field name="class_ids"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <record id="school_teacher_action" model="ir.actions.act_window">
+        <field name="name">Teacher</field>
+        <field name="res_model">school.teacher</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="simple_school_app_menu"
+        name="Simple School"
+        sequence="10"/>
+    <menuitem
+        id="school_teacher_menu"
+        name="Teacher"
+        action="school_teacher_action"
+        parent="simple_school_app_menu"
+        sequence="100"/>
+
+    <!-- #student -->
+    <record id="school_student_view_form" model="ir.ui.view">
+        <field name="name">school.student.view.form</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="birthday"/>
+                        <field name="class_id"/> 
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_student_view_tree" model="ir.ui.view">
+        <field name="name">school.student.view.tree</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="birthday"/>
+                 <field name="class_id"/> 
+            </tree>
+        </field>
+    </record>
+
+    <record id="school_student_action" model="ir.actions.act_window">
+        <field name="name">Student</field>
+        <field name="res_model">school.teacher</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="school_student_menu"
+        name="Student"
+        action="school_student_action"
+        parent="simple_school_app_menu"
+        sequence="100"/>
+
+    <!-- #Classroom -->
+    <record id="school_class_view_form" model="ir.ui.view">
+        <field name="name">school.class.view.form</field>
+        <field name="model">school.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <!-- <field name="teacher_id"/>
+                        <field name="student_ids"/> -->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="school_class_view_tree" model="ir.ui.view"> 
+        <field name="name">school.class.view.tree</field>
+        <field name="model">school.class</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <!-- <field name="teacher_id"/>
+                <field name="student_ids"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <record id="school_class_action" model="ir.actions.act_window">
+        <field name="name">Classroom</field>
+        <field name="res_model">school.teacher</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem
+        id="school_classroom_menu"
+        name="Classroom"
+        action="school_class_action"
+        parent="simple_school_app_menu"
+        sequence="100"/>
+    
+</odoo>
